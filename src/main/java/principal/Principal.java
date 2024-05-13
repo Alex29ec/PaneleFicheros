@@ -10,12 +10,12 @@ import principal.views.PanelTablaYFicheros;
 public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	JTabbedPane panelTabbed;  
-	static Principal instance = null; 
+	static Principal instance = null;
 
 	public static Principal getInstance() {
 		if (instance == null) {
 			instance = new Principal();
-		} 
+		}
 		return instance;    
 	}
   
