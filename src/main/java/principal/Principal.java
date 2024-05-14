@@ -18,7 +18,6 @@ public class Principal extends JFrame {
 		}
 		return instance;    
 	}
-  
 	public Principal() {
 		super("Gestion de Ficheros");
 		this.setBounds(0, 0, 800, 600);

@@ -118,7 +118,7 @@ public class PanelCopiaFicheros extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					copiar();
-					JOptionPane.showMessageDialog(null, "Ficheros copiados con éxito mi rey");
+					JOptionPane.showMessageDialog(null, "Ficheros copiados correctamente");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -172,15 +172,10 @@ public class PanelCopiaFicheros extends JPanel {
 		File fichero = null;
 		this.jfileChooser = new JFileChooser();
 
-		// Establecimiento de la carpeta de inicio
 		this.jfileChooser.setCurrentDirectory(new File("C:\\"));
 
-		// Tipo de selección que se hace en el diálogo
-//		this.jfileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY); // Sólo selecciona ficheros
 		this.jfileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); // Sólo selecciona carpetas
-//		this.jfileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES); // Selecciona ficheros y carpetas
 
-		// Filtro del tipo de ficheros que puede abrir
 		this.jfileChooser.setFileFilter(new FileFilter() {
 
 			@Override
@@ -196,13 +191,12 @@ public class PanelCopiaFicheros extends JPanel {
 			}
 		});
 
-		// Abro el diálogo para la elección del usuario
 		int seleccionUsuario = jfileChooser.showOpenDialog(null);
 
 		if (seleccionUsuario == JFileChooser.APPROVE_OPTION) {
 			 fichero = this.jfileChooser.getSelectedFile();
 
-			// Vuelco el nombre del fichero sobre el JTextField
+	
 			jtf.setText(fichero.getAbsolutePath());
 
 		}
